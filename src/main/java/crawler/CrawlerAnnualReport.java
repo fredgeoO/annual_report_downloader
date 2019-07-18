@@ -53,9 +53,12 @@ public class CrawlerAnnualReport extends crawler.CrawlerBase {
             instances.add(crwaler);
 
             for (int i = 0; i < size; i++) {
+
                 if (i % total_thread == idx_thread) {
+
                     String info = fractional_stockcodes_info.get(i);
                     String stock_code = info.substring(0, 5);
+
                     try {
                         crwaler.download_annual_report(stock_code, folderpath);
                     } catch (InterruptedException e) {
@@ -68,6 +71,7 @@ public class CrawlerAnnualReport extends crawler.CrawlerBase {
                         continue;
                     }
                 }
+
             }
 
             instances.remove(crwaler);
@@ -81,7 +85,7 @@ public class CrawlerAnnualReport extends crawler.CrawlerBase {
     }
 
     public static boolean is_running() {
-        for (int i = 0; i < thread_count; i++) {
+        for (int i = 0; i < threads.size(); i++) {
 
             if (threads.get(i).isAlive()) return true;
 
@@ -95,7 +99,7 @@ public class CrawlerAnnualReport extends crawler.CrawlerBase {
             System.out.println("thread is not running.");
             return;
         }
-        for (int i = 0; i < thread_count; i++) {
+        for (int i = 0; i < threads.size(); i++) {
             try {
                 threads.get(i).join();
             } catch (InterruptedException e) {
@@ -110,7 +114,7 @@ public class CrawlerAnnualReport extends crawler.CrawlerBase {
             System.out.println("thread is not running.");
             return;
         }
-        for (int i = 0; i < thread_count; i++) {
+        for (int i = 0; i < instances.size(); i++) {
             try {
 
                 instances.get(i).driver.close();

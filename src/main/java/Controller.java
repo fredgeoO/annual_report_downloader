@@ -176,10 +176,11 @@ public class Controller implements Initializable {
     }
 
     public void OnMouseClicked_btn_cancel(MouseEvent mouseEvent) {
-
-        CrawlerAnnualReport.shutdown();
         btn_download.setText("下载");
         btn_download.setDisable(false);
+
+        CrawlerAnnualReport.shutdown();
+
     }
 
     public void OnMouseClicked_choose_output_folder(MouseEvent mouseEvent) {
