@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<TabPane xmlns:fx="http://javafx.com/fxml/1" fx:id="stage_tabpane" maxWidth="1.7976931348623157E308" prefHeight="444.0"
+         prefWidth="687.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1"
+         fx:controller="Controller">
+    <tabs>
+        <Tab text="下载年报">
+            <content>
+                <AnchorPane maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                            prefWidth="200.0">
+                    <children>
+                        <SplitPane dividerPositions="0.21172022684310018" maxWidth="1.7976931348623157E308"
+                                   orientation="VERTICAL" prefHeight="464.0" prefWidth="737.0"
+                                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <items>
+                                <AnchorPane maxHeight="105.0" maxWidth="1.7976931348623157E308" minHeight="105.0"
+                                            minWidth="300.0" prefHeight="373.0" prefWidth="682.0">
+                                    <children>
+                                        <GridPane maxHeight="100.0" maxWidth="1.7976931348623157E308" prefHeight="100.0"
+                                                  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                  AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <columnConstraints>
+                                                <ColumnConstraints halignment="LEFT" hgrow="NEVER" maxWidth="176.0"
+                                                                   minWidth="10.0" prefWidth="143.0"/>
+                                                <ColumnConstraints halignment="LEFT" hgrow="ALWAYS"
+                                                                   maxWidth="1.7976931348623157E308" minWidth="250.0"
+                                                                   prefWidth="542.0"/>
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                                <RowConstraints maxHeight="35.0" minHeight="30.0" prefHeight="35.0"
+                                                                vgrow="NEVER"/>
+                                                <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0"
+                                                                vgrow="NEVER"/>
+                                                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0"
+                                                                vgrow="NEVER"/>
+                                            </rowConstraints>
+                                            <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="299.0"
+                                                      spacing="15.0" GridPane.columnIndex="1"
+                                                      GridPane.halignment="CENTER" GridPane.rowIndex="2"
+                                                      GridPane.valignment="CENTER">
+                                                    <children>
+                                                        <HBox alignment="CENTER_LEFT" prefHeight="40.0"
+                                                              prefWidth="146.0" HBox.hgrow="NEVER">
+                                                            <children>
+                                                                <Label fx:id="label_thread_count" alignment="CENTER"
+                                                                       text="线程数：">
+                                                                    <font>
+                                                                        <Font name="Microsoft JhengHei Bold"
+                                                                              size="16.0"/>
+                                                                    </font>
+                                                                    <padding>
+                                                                        <Insets left="10.0"/>
+                                                                    </padding>
+                                                                </Label>
+                                                                <ToggleButton fx:id="togglebtn_1"
+                                                                              accessibleRole="BUTTON"
+                                                                              mnemonicParsing="false" selected="true"
+                                                                              text="1">
+                                                                    <toggleGroup>
+                                                                        <ToggleGroup fx:id="toggle_thread_count"/>
+                                                                    </toggleGroup>
+                                                                </ToggleButton>
+                                                                <ToggleButton fx:id="togglebtn_2"
+                                                                              mnemonicParsing="false" text="2"
+                                                                              toggleGroup="$toggle_thread_count"/>
+                                                                <ToggleButton fx:id="togglebtn_3"
+                                                                              mnemonicParsing="false" prefHeight="25.0"
+                                                                              prefWidth="19.0" text="3"
+                                                                              toggleGroup="$toggle_thread_count"/>
+                                                            </children>
+                                                        </HBox>
+                                                        <ToggleButton fx:id="toggle_hidden_browser"
+                                                                      mnemonicParsing="false"
+                                                                      onMouseClicked="#OnMouseClicked_toggle_hidden_browser"
+                                                                      selected="true" text="隐藏浏览器"/>
+                                                        <Button fx:id="btn_download" alignment="CENTER"
+                                                                defaultButton="true" mnemonicParsing="false"
+                                                                onMouseClicked="#OnMouseClicked_btn_download"
+                                                                prefHeight="30.0" prefWidth="140.0" text="下载">
+                                                            <font>
+                                                                <Font size="14.0"/>
+                                                            </font>
+                                                        </Button>
+                                                        <Button fx:id="btn_cancel" cancelButton="true"
+                                                                mnemonicParsing="false"
+                                                                onMouseClicked="#OnMouseClicked_btn_cancel"
+                                                                prefHeight="20.0" prefWidth="90.0" text="取消"/>
+                                                    </children>
+                                                    <GridPane.margin>
+                                                        <Insets right="10.0"/>
+                                                    </GridPane.margin>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308"
+                                                      maxWidth="1.7976931348623157E308" minWidth="250.0" spacing="10.0"
+                                                      GridPane.columnIndex="1" GridPane.vgrow="ALWAYS">
+                                                    <children>
+                                                        <ComboBox fx:id="combobox_annual_report_location"
+                                                                  editable="true" maxWidth="1.7976931348623157E308"
+                                                                  minWidth="250.0" prefHeight="25.0" prefWidth="800.0">
+                                                            <HBox.margin>
+                                                                <Insets/>
+                                                            </HBox.margin>
+                                                        </ComboBox>
+                                                        <Button minWidth="80.0" mnemonicParsing="false"
+                                                                onMouseClicked="#OnMouseClicked_choose_output_folder"
+                                                                prefWidth="80.0" text="选择文件夹">
+                                                            <HBox.margin>
+                                                                <Insets right="10.0"/>
+                                                            </HBox.margin>
+                                                        </Button>
+                                                    </children>
+                                                    <opaqueInsets>
+                                                        <Insets/>
+                                                    </opaqueInsets>
+                                                    <GridPane.margin>
+                                                        <Insets left="10.0"/>
+                                                    </GridPane.margin>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308"
+                                                      maxWidth="1.7976931348623157E308" minWidth="250.0" spacing="10.0"
+                                                      GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                    <children>
+                                                        <ComboBox fx:id="combobox_stocklist_location" editable="true"
+                                                                  maxWidth="1.7976931348623157E308" minWidth="250.0"
+                                                                  prefHeight="25.0" prefWidth="800.0">
+                                                            <HBox.margin>
+                                                                <Insets/>
+                                                            </HBox.margin>
+                                                        </ComboBox>
+                                                        <Button minWidth="80.0" mnemonicParsing="false"
+                                                                onMouseClicked="#OnMouseClicked_choose_stockcode_txt"
+                                                                prefWidth="80.0" text="选择txt">
+                                                            <HBox.margin>
+                                                                <Insets right="10.0"/>
+                                                            </HBox.margin>
+                                                        </Button>
+                                                    </children>
+                                                    <opaqueInsets>
+                                                        <Insets/>
+                                                    </opaqueInsets>
+                                                    <padding>
+                                                        <Insets left="10.0"/>
+                                                    </padding>
+                                                </HBox>
+                                                <Label fx:id="label_folder_location" text="文件夹位置："
+                                                       GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                                                    <font>
+                                                        <Font name="Microsoft JhengHei Bold" size="16.0"/>
+                                                    </font>
+                                                    <padding>
+                                                        <Insets left="10.0"/>
+                                                    </padding>
+                                                </Label>
+                                                <Label fx:id="label_stocklist" text="港股代码列表："
+                                                       GridPane.halignment="CENTER" GridPane.rowIndex="1"
+                                                       GridPane.valignment="CENTER">
+                                                    <font>
+                                                        <Font name="Microsoft JhengHei Bold" size="16.0"/>
+                                                    </font>
+                                                    <padding>
+                                                        <Insets left="10.0"/>
+                                                    </padding>
+                                                </Label>
+                                                <Label fx:id="label_setting" text="设定：" GridPane.halignment="CENTER"
+                                                       GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                                                    <font>
+                                                        <Font name="Microsoft JhengHei Bold" size="16.0"/>
+                                                    </font>
+                                                    <padding>
+                                                        <Insets left="10.0"/>
+                                                    </padding>
+                                                </Label>
+                                            </children>
+                                        </GridPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="456.0" prefWidth="682.0">
+                                    <children>
+                                        <TextArea fx:id="textArea_commandline_output" editable="false" layoutX="-3.0"
+                                                  layoutY="-16.0" promptText="鼠标在标签停留会有提示。"
+                                                  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                  AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0"/>
+                                    </children>
+                                </AnchorPane>
+                            </items>
+                        </SplitPane>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+        <Tab text="说明">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <children>
+                        <TextArea editable="false" layoutX="14.0" layoutY="2.0" prefHeight="459.0" prefWidth="661.0"
+                                  text="鼠标在标签停留会有提示。这软件需要安装Chrome和相对应的&#10;ChromeDriver版本才可使用。&#10;&#10;介绍一下 Chrome 浏览器及 ChromeDriver 驱动的配置。&#10;首先需要下载一个 Chrome 浏览器，随后需要安装一个 ChromeDriver &#10;才能驱动 Chrome 浏览器完成相应的操作。&#10;&#10;相关链接&#10;&#10;官方网站：&#10;下载地址：&#10;&#10;Chrome下载地址：&#10;"
+                                  AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                  AnchorPane.topAnchor="0.0">
+                            <font>
+                                <Font size="17.0"/>
+                            </font>
+                        </TextArea>
+                        <Hyperlink layoutX="99.0" layoutY="236.0" onMouseClicked="#OnMouseClicked_link"
+                                   text="https://sites.google.com/a/chromium.org/chromedriver">
+                            <font>
+                                <Font size="17.0"/>
+                            </font>
+                        </Hyperlink>
+                        <Hyperlink layoutX="99.0" layoutY="262.0" onMouseClicked="#OnMouseClicked_link"
+                                   text="https://chromedriver.storage.googleapis.com/index.html">
+                            <font>
+                                <Font size="17.0"/>
+                            </font>
+                        </Hyperlink>
+                        <Hyperlink layoutX="156.0" layoutY="294.0" onMouseClicked="#OnMouseClicked_link"
+                                   prefHeight="116.0" prefWidth="374.0"
+                                   text="https://www.google.com/chrome/browser/thankyou.html?standalone=1&amp;amp;amp;amp;platform=win&amp;amp;amp;amp;installdataindex=defaultbrowser"
+                                   wrapText="true">
+                            <font>
+                                <Font size="17.0"/>
+                            </font>
+                        </Hyperlink>
+                    </children>
+                </AnchorPane>
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>

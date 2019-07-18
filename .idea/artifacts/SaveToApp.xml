@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact build-on-make="true" name="SaveToApp">
+    <output-path>D:/program_data/app</output-path>
+    <root id="root">
+      <element id="artifact" artifact-name="AnnualReportDownloader" />
+    </root>
+  </artifact>
+</component>
