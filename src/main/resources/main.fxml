@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 <TabPane xmlns:fx="http://javafx.com/fxml/1" fx:id="stage_tabpane" maxWidth="1.7976931348623157E308" prefHeight="444.0"
-         prefWidth="687.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1"
+         prefWidth="687.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171"
          fx:controller="Controller">
     <tabs>
         <Tab text="下载年报">
@@ -13,13 +14,13 @@
                 <AnchorPane maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="180.0"
                             prefWidth="200.0">
                     <children>
-                        <SplitPane dividerPositions="0.21172022684310018" maxWidth="1.7976931348623157E308"
+                        <SplitPane dividerPositions="0.29782082324455206" maxWidth="1.7976931348623157E308"
                                    orientation="VERTICAL" prefHeight="464.0" prefWidth="737.0"
                                    AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
                                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <items>
-                                <AnchorPane maxHeight="105.0" maxWidth="1.7976931348623157E308" minHeight="105.0"
-                                            minWidth="300.0" prefHeight="373.0" prefWidth="682.0">
+                                <AnchorPane maxHeight="120.0" maxWidth="1.7976931348623157E308" minHeight="105.0"
+                                            minWidth="300.0" prefHeight="120.0" prefWidth="682.0">
                                     <children>
                                         <GridPane maxHeight="100.0" maxWidth="1.7976931348623157E308" prefHeight="100.0"
                                                   AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
@@ -36,7 +37,7 @@
                                                                 vgrow="NEVER"/>
                                                 <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0"
                                                                 vgrow="NEVER"/>
-                                                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0"
+                                                <RowConstraints maxHeight="50.0" minHeight="50.0" prefHeight="50.0"
                                                                 vgrow="NEVER"/>
                                             </rowConstraints>
                                             <children>
@@ -79,14 +80,17 @@
                                                                       mnemonicParsing="false"
                                                                       onMouseClicked="#OnMouseClicked_toggle_hidden_browser"
                                                                       selected="true" text="隐藏浏览器"/>
-                                                        <Button fx:id="btn_download" alignment="CENTER"
-                                                                defaultButton="true" mnemonicParsing="false"
-                                                                onMouseClicked="#OnMouseClicked_btn_download"
-                                                                prefHeight="30.0" prefWidth="140.0" text="下载">
+                                                        <JFXButton fx:id="btn_download" alignment="TOP_CENTER"
+                                                                   buttonType="RAISED" contentDisplay="CENTER"
+                                                                   onAction="#OnMouseClicked_btn_download"
+                                                                   prefHeight="30.0" prefWidth="140.0"
+                                                                   ripplerFill="WHITE"
+                                                                   style="-fx-background-color: #34495e;"
+                                                                   styleClass="jfx-button" text="下載" textFill="WHITE">
                                                             <font>
-                                                                <Font size="14.0"/>
+                                                                <Font name="System Bold" size="16.0"/>
                                                             </font>
-                                                        </Button>
+                                                        </JFXButton>
                                                         <Button fx:id="btn_cancel" cancelButton="true"
                                                                 mnemonicParsing="false"
                                                                 onMouseClicked="#OnMouseClicked_btn_cancel"
@@ -102,14 +106,14 @@
                                                     <children>
                                                         <ComboBox fx:id="combobox_annual_report_location"
                                                                   editable="true" maxWidth="1.7976931348623157E308"
-                                                                  minWidth="250.0" prefHeight="25.0" prefWidth="800.0">
+                                                                  minWidth="250.0" prefHeight="25.0" prefWidth="412.0">
                                                             <HBox.margin>
                                                                 <Insets/>
                                                             </HBox.margin>
                                                         </ComboBox>
                                                         <Button minWidth="80.0" mnemonicParsing="false"
                                                                 onMouseClicked="#OnMouseClicked_choose_output_folder"
-                                                                prefWidth="80.0" text="选择文件夹">
+                                                                prefHeight="25.0" prefWidth="99.0" text="选择文件夹">
                                                             <HBox.margin>
                                                                 <Insets right="10.0"/>
                                                             </HBox.margin>
@@ -128,14 +132,14 @@
                                                     <children>
                                                         <ComboBox fx:id="combobox_stocklist_location" editable="true"
                                                                   maxWidth="1.7976931348623157E308" minWidth="250.0"
-                                                                  prefHeight="25.0" prefWidth="800.0">
+                                                                  prefHeight="25.0" prefWidth="412.0">
                                                             <HBox.margin>
                                                                 <Insets/>
                                                             </HBox.margin>
                                                         </ComboBox>
                                                         <Button minWidth="80.0" mnemonicParsing="false"
                                                                 onMouseClicked="#OnMouseClicked_choose_stockcode_txt"
-                                                                prefWidth="80.0" text="选择txt">
+                                                                prefHeight="25.0" prefWidth="99.0" text="选择txt">
                                                             <HBox.margin>
                                                                 <Insets right="10.0"/>
                                                             </HBox.margin>

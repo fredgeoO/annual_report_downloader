@@ -31,5 +31,8 @@
     <orderEntry type="library" name="Maven: org.codehaus.mojo:animal-sniffer-annotations:1.14" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.okhttp3:okhttp:3.11.0" level="project" />
     <orderEntry type="library" name="Maven: com.squareup.okio:okio:1.14.0" level="project" />
+    <orderEntry type="library" name="Maven: com.jfoenix:jfoenix:8.0.9" level="project" />
+    <orderEntry type="library" name="Maven: io.datafx:flow:8.0.7" level="project" />
+    <orderEntry type="library" name="Maven: io.datafx:core:8.0.7" level="project" />
   </component>
 </module>

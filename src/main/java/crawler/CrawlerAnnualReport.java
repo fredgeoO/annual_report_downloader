@@ -19,6 +19,7 @@ public class CrawlerAnnualReport extends crawler.CrawlerBase {
     static int thread_count;
     static boolean is_running = true;
     static boolean visible = false;
+
     ChromeDriver driver = null;
     DateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
     Calendar cal = Calendar.getInstance();

@@ -2,7 +2,11 @@
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
     <comment/>
+    <entry key="selected_stock_list">C:\Users\zgw31\IdeaProjects\AnnuelReportDownloader\small_list.txt</entry>
+    <entry key="selected_annual_report_location">D:\program_data\app\annual_report\</entry>
+    <entry key="stockcode_path0">C:\Users\zgw31\IdeaProjects\AnnuelReportDownloader\small_list.txt</entry>
     <entry key="path2">/somethingpath2</entry>
+    <entry key="output_path1">D:\program_data\app\annual_report</entry>
     <entry key="path1">/somethingpath1</entry>
     <entry key="output_path0">D:\</entry>
 </properties>

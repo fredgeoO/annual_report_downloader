@@ -64,6 +64,7 @@ public class CrawlerBase {
         return this;
     }
 
+
     public ChromeDriver get_headlessdriver() {
         options.addArguments("--headless");
         ChromeDriver driver = new ChromeDriver(options);

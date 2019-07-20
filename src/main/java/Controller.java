@@ -1,8 +1,10 @@
+import com.jfoenix.controls.JFXButton;
 import crawler.CrawlerAnnualReport;
 import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -45,7 +47,7 @@ public class Controller implements Initializable {
     @FXML
     TextArea textArea_commandline_output;
     @FXML
-    Button btn_download;
+    JFXButton btn_download;
 
     Stage stage;
     StringBuffer sb_commandline;
@@ -111,7 +113,7 @@ public class Controller implements Initializable {
 
     }
 
-    public void OnMouseClicked_btn_download(MouseEvent mouseEvent) {
+    public void OnMouseClicked_btn_download(ActionEvent mouseEvent) {
         Button btn = (Button) mouseEvent.getSource();
         btn.setText("正在下载");
         btn.setDisable(true);
